@@ -1,0 +1,581 @@
+/* Variáveis de Cores e Estilo Geral */
+:root {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --accent-color: #f97316; /* Laranja inspirado no currículo */
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --purple-accent: #8b5cf6; /* Roxo para detalhes sutis */
+    --freelance-color: #10b981; /* Verde para destacar trabalhos freelance */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Espaçamento para ícones FontAwesome */
+i {
+    margin-right: 6px;
+}
+
+/* Classes utilitárias de background */
+.bg-card {
+    background-color: var(--card-bg);
+}
+
+.bg-main {
+    background-color: var(--bg-color);
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: rgba(30, 41, 59, 0.95);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    color: var(--accent-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Ícones Sociais no Cabeçalho */
+.header-social {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.header-social a {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-social a:hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+/* Seção Principal (Hero) e Foto de Perfil Ajustada */
+.hero {
+    text-align: center;
+    padding: 6rem 5% 8rem 5%;
+    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 1));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-container {
+    margin-bottom: 1.5rem;
+}
+
+.profile-img {
+    width: 220px;
+    height: auto; 
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    color: var(--purple-accent);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    color: #94a3b8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+}
+
+/* Configurações Comuns de Seções */
+section {
+    padding: 6rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto 0 auto;
+}
+
+/* Gráfico de Commits GitHub */
+.github-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.github-chart {
+    width: 100%;
+    min-width: 600px;
+    filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.1));
+}
+
+/* Grid de Projetos */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border-color: var(--purple-accent);
+}
+
+.card-content {
+    padding: 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Estilo para a Tag de Freelance */
+.freelance-badge {
+    display: inline-block;
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--freelance-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    margin-bottom: 1.2rem;
+    align-self: flex-start;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Botões de Ação (Links de Sites e Certificados) */
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    background-color: rgba(249, 115, 22, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: flex-start;
+}
+
+.action-link:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* Galeria de Imagens dos Projetos */
+.project-gallery {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.project-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+.project-gallery::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 4px;
+}
+.project-gallery::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.gallery-item {
+    flex: 1;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.gallery-item span {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Tecnologias (Tech Stack) */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tech-badge {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos do Modal de Visualização de Imagem (Lightbox) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--border-color);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--text-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Lista de Formação */
+.list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.list-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+.list-item-info p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.tag {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    text-align: center;
+    min-width: 130px;
+}
+
+/* Seção de Livros (Estilo Lista / Retângulo Menor) */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px; /* Largura controlada para parecer um livro pequeno */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.book-item:hover {
+    transform: translateY(-8px);
+}
+
+.book-cover-img {
+    width: 140px;
+    height: 210px; /* Proporção de livro retangular vertical (2:3) */
+    object-fit: cover;
+    border-radius: 4px; /* Canto bem sutil, comum em livros */
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.placeholder-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #334155;
+    color: #64748b;
+    font-size: 2.5rem;
+}
+
+.book-title-small {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+}
+
+.book-author-small {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Rodapé */
+footer {
+    background-color: #0b1121;
+    text-align: center;
+    padding: 3rem 5%;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+.contact-links a:hover {
+    color: var(--accent-color);
+}
+
+footer p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+    }
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .tag {
+        align-self: flex-start;
+    }
+    .project-gallery {
+        flex-wrap: nowrap;
+    }
+    .close-modal {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    .profile-img {
+        width: 180px;
+    }
+    .github-chart {
+        min-width: 500px;
+    }
+    .book-list {
+        gap: 1.5rem;
+    }
+    .book-item {
+        width: 120px;
+    }
+    .book-cover-img {
+        width: 120px;
+        height: 180px;
+    }
+}
